@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+	<title>JQuery Activ'Map Plugin</title>
+	<meta name="author" content="Pandao">
+	<meta name="copyright" content="Pandao">
+	<meta name="generator" content="Documenter v2.0 http://rxa.li/documenter">
+	<meta name="date" content="2015-01-08T00:00:00+01:00">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <link href="assets/js/google-code-prettify/prettify.css" rel="stylesheet">
+    <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="assets/css/documenter_style.css" rel="stylesheet">
+    <link href="http://www.pandao.eu/templates/default/images/favicon.png" rel="favicon">
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+</head>
+<body data-spy="scroll" id="top">
+<div class="navbar navbar-fixed-top">
+	<div class="navbar-inner">
+		<div class="container">
+			<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </a>
+			<a class="brand" href="#"><img src="assets/images/logo.png" alt="JQuery Activ'Map Plugin"></a>
+			<div class="nav-collapse">
+                <ul class="nav pull-right">
+                    <li><a href="#get_started" title="GET STARTED">GET STARTED</a></li>
+                    <li><a href="#options" title="OPTIONS">OPTIONS</a></li>
+                    <li><a href="#screenshots" title="SCREENSHOTS">SCREENSHOTS</a></li>
+                </ul>
+			</div>
+		</div>
+	</div>
+</div>	
+<div class="container" id="documenter_content">
+	<div id="documenter-cover">
+        <div class="masthead">
+            <h1>JQuery Activ'Map Plugin<br><small>a powerfull map with your own places</small></h1>
+            <p>The perfect plugin to research and locate custom services and equipments in a city, among other things,
+            Activ'Map is a JQuery plugin using the Google Maps API V3 and Bootstrap 3.x which display a map with markers sorted by categories.
+            <br>
+            Accordion panels contains checkbox filters (tags) which shows or hides the associated places in a removable panel and the corresponding markers on the Google Maps.<br>
+            Click on a place to focus on the marker on the map and vice versa.<br>
+            The markers can be clustered if too numerous. The system is fully responsive so the removable panel displays itself or not according to the device.<br>
+            Remove or add your own categories, tags and places as many as you want!<br>
+            Define the center of the map by simply inputting the latitude and the longitude.<br>
+            Based on HTML5 - CSS3 - Bootstrap 3.x - JQuery - Google Maps API V3</p>
+            <ul class="marketing-byline">
+                <li>created: 05/01/2015</li>
+                <li>latest update: 08/01/2015</li>
+                <li>by: Pandao</li>
+            </ul>
+            <p class="download-info">
+                <a href="http://activmap.pandao.eu/" target="_blank" class="btn btn-primary btn-large">Demo</a>
+                <a href="http://codecanyon.net/item/activmap-jquery-plugin-responsive-gmaps/10036421" target="_blank" class="btn btn-primary btn-large">Purchase &amp; Download</a>
+            </p>
+            <p><strong>Thank you for purchasing our plugin. If you have any questions that are beyond the scope of this help file, please contact us. Thanks so much!</strong></p>
+            <img src="assets/images/doc-header.jpg" alt="Features" class="img-responsive">
+        </div>
+	</div>
+    <section id="get_started">
+        <div class="page-header"><h3>GET STARTED</h3></div>
+
+        <h4>Implementation</h4>
+
+        <p>To implement the Activ'Map on a page, you need to link the following CSS and JS files.</p>
+
+        <pre class="prettyprint lang-html linenums">
+&lt;!-- JQuery --&gt;
+&lt;script src=&quot;http://code.jquery.com/jquery-1.10.2.min.js&quot;&gt;&lt;/script&gt;
+
+&lt;!-- Bootstrap 3 / Optional --&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;bootstrap/css/bootstrap.min.css&quot;&gt;
+&lt;script src=&quot;bootstrap/js/bootstrap.min.js&quot;&gt;&lt;/script&gt;
+
+&lt;!-- Google Maps API V3 --&gt;
+&lt;script src=&quot;https://maps.googleapis.com/maps/api/js?js?v=3.exp&amp;libraries=places&amp;sensor=false&quot;&gt;&lt;/script&gt;
+
+&lt;!-- Activ&#39;Map plugin --&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;jquery-activmap/css/jquery-activmap.css&quot;&gt;
+&lt;script src=&quot;jquery-activmap/js/jquery-activmap.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;jquery-activmap/js/markercluster.min.js&quot;&gt;&lt;/script&gt;</pre>
+
+        <div class="alert">
+            Note that <b>Bootstrap is optional</b>. Activ'Map is ready to run with Bootstrap if you want to implement the plugin in a website using Bootstrap. It's required in the Demo for example.</p>
+        </div>
+        
+        <p>Then, all that you have to do is call the Activ'Map on the page with your own places.</p>
+
+        <pre class="prettyprint lang-js linenums">
+$(function(){
+    //Activ&#39;Map plugin init
+    $(&#39;#activmap-wrapper&#39;).activmap({
+        places : [
+            {title:&#39;Place_1&#39;, address:&#39;XX Str City&#39;, phone:&#39;+XX XX XXXX&#39;, tags:[&#39;tag_01&#39;], lat:XX.XXX, lng:-X.XXX, img:&#39;pic_1.jpg&#39;},
+            {title:&#39;Place_2&#39;, address:&#39;XX Str City&#39;, phone:&#39;+XX XX XXXX&#39;, tags:[&#39;tag_01&#39;,&#39;tag_02&#39;], lat:XX.XXX, lng:-X.XXX, img:&#39;pic_2.jpg&#39;}
+        ]
+    });
+});</pre>
+
+        <h4>Basic HTML code</h4>
+
+        <pre class="prettyprint lang-html linenums">
+&lt;!-- Reset button --&gt;
+&lt;a id=&quot;activmap-reset&quot; href=&quot;#&quot;&gt;Reset&lt;/a&gt;
+
+&lt;!-- List of filters --&gt;
+&lt;input type=&quot;checkbox&quot; name=&quot;marker_type[]&quot; value=&quot;my_tag_01&quot;&gt; TAG 1&lt;br&gt;
+&lt;input type=&quot;checkbox&quot; name=&quot;marker_type[]&quot; value=&quot;my_tag_02&quot;&gt; TAG 2&lt;br&gt;
+&lt;input type=&quot;checkbox&quot; name=&quot;marker_type[]&quot; value=&quot;my_tag_03&quot;&gt; TAG 3&lt;br&gt;
+...
+
+&lt;div id=&quot;activmap-wrapper&quot;&gt;
+    &lt;!-- Places panel (auto removable) --&gt;
+    &lt;div id=&quot;activmap-places&quot; class=&quot;hidden-xs&quot;&gt;
+        &lt;div id=&quot;activmap-results-num&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;!-- Map wrapper --&gt;
+    &lt;div id=&quot;activmap-canvas&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;</pre>
+
+    <h4>JSON use</h4>
+
+    <p>You can also use JSON file to define your places. Simply enter the url of this file instead of the default array of places.</p>
+
+     <pre class="prettyprint lang-js linenums">
+$(function(){
+    //Activ&#39;Map plugin init
+    $(&#39;#activmap-wrapper&#39;).activmap({
+        places : &#39;/places.json&#39;
+    });
+});</pre>
+
+    <p>JSON example:
+
+<pre class="prettyprint lang-js linenums">
+{
+    &quot;places&quot;: [
+        {&quot;title&quot;:&#39;Place_1&#39;, &quot;address&quot;:&#39;XX Str City&#39;, &quot;phone&quot;:&#39;+XX XX XXXX&#39;, &quot;tags&quot;:[&#39;tag_01&#39;], &quot;lat&quot;:XX.XXX, &quot;lng&quot;:-X.XXX, &quot;img&quot;:&#39;pic_1.jpg&#39;},
+        {&quot;title&quot;:&#39;Place_2&#39;, &quot;address&quot;:&#39;XX Str City&#39;, &quot;phone&quot;:&#39;+XX XX XXXX&#39;, &quot;tags&quot;:[&#39;tag_01&#39;,&#39;tag_02&#39;], &quot;lat&quot;:XX.XXX, &quot;lng&quot;:-X.XXX, &quot;img&quot;:&#39;pic_2.jpg&#39;}
+    ]
+}</pre>
+
+    </section>
+
+    <section id="options">
+        <div class="page-header"><h3>Options</h3></div>
+        
+        <h4>General options</h4>
+        
+        <table border="1" cellpadding="5" cellspacing="0">
+            <thead>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Expected type / values</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Example</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>places</td>
+                    <td>array or url of .json file</td>
+                    <td>list of place objects<br/>{title, address, phone, tags, lat, lng, img}</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>lat</td>
+                    <td>numeric</td>
+                    <td>latitude of the center</td>
+                    <td>51.499418</td>
+                </tr>
+                <tr>
+                    <td>lng</td>
+                    <td>numeric</td>
+                    <td>longitude of the center</td>
+                    <td>51.499418</td>
+                </tr>
+                <tr>
+                    <td>zoom</td>
+                    <td>integer [0-21]</td>
+                    <td>default zoom level on load</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>autogeolocate</td>
+                    <td>true or false</td>
+                    <td>enables / disables the auto geolocation on load to set the center of the map</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>cluster</td>
+                    <td>true or false</td>
+                    <td>enables / disables clustering for large amounts of markers</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>mapType</td>
+                    <td>"roadmap", "satellite", "perspective"</td>
+                    <td>as the name suggests</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>posPanel</td>
+                    <td>"left" or "right"</td>
+                    <td>position of the removable panel</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>showPanel</td>
+                    <td>true or false</td>
+                    <td>shows / hides the removable panel</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>radius</td>
+                    <td>integer</td>
+                    <td>max radius around the position in kilometers</td>
+                    <td>20 for 20km</td>
+                </tr>
+                <tr>
+                    <td>country</td>
+                    <td>text (2 characters - ISO 3166-1)</td>
+                    <td>to filter by country</td>
+                    <td>"ca": Canada, "us": United States, "fr": France</td>
+                </tr>
+                <tr>
+                    <td>style</td>
+                    <td>object</td>
+                    <td>map styles</td>
+                    <td>snazzy maps styles</td>
+                </tr>
+                
+            </tbody>
+        </table>
+
+        <h4>Place object attributes</h4>
+
+        <table border="1" cellpadding="5" cellspacing="0">
+            <thead>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Expected type / values</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Example</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>title</td>
+                    <td>text</td>
+                    <td>title of the place</td>
+                    <td>Harrods</td>
+                </tr>
+                <tr>
+                    <td>address</td>
+                    <td>text</td>
+                    <td>address of the place</td>
+                    <td>87-135 Brompton Road London SW1X 7XL, United Kingdom</td>
+                </tr>
+                <tr>
+                    <td>phone</td>
+                    <td>text</td>
+                    <td>phone of the place</td>
+                    <td>+44 20 7730 1234</td>
+                </tr>
+                <tr>
+                    <td>tags</td>
+                    <td>array</td>
+                    <td>list of filters the place belongs to</td>
+                    <td>['shops_01','shops_02']</td>
+                </tr>
+                <tr>
+                    <td>lat</td>
+                    <td>numeric</td>
+                    <td>latitude of the marker</td>
+                    <td>51.499418</td>
+                </tr>
+                <tr>
+                    <td>lng</td>
+                    <td>numeric</td>
+                    <td>longitude of the marker</td>
+                    <td>-0.163239</td>
+                </tr>
+                <tr>
+                    <td>URL</td>
+                    <td>text</td>
+                    <td>URL of a website</td>
+                    <td>http://activmap.pandao.eu</td>
+                </tr>
+                <tr>
+                    <td>img</td>
+                    <td>text</td>
+                    <td>image path (logo, sign...)</td>
+                    <td>path/image.jpg</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    
+    <section id="screenshots">
+        <div class="page-header"><h3>SCREENSHOTS</h3></div>
+
+        <img src="assets/images/screenshot.jpg" class="img-responsive" alt="">
+    </section>
+    
+    <hr>
+    
+    <footer>
+        <p>Copyright Pandao 2015 made with the <a href="http://rxa.li/documenter">Documenter v2.0</a></p>
+    </footer>
+</div>
+<script>document.createElement('section');var duration='500',easing='swing';</script>
+<script src="assets/js/jquery.js"></script>
+<script src="assets/js/jquery.scrollTo.js"></script>
+<script src="assets/js/jquery.easing.js"></script>
+<script src="assets/js/scripts.js"></script>
+<script src="assets/js/google-code-prettify/prettify.js"></script>
+<script src="assets/js/bootstrap-min.js"></script>
+</body>
+</html>

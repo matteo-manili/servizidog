@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<groups xmlns="http://www.isdc.ro/wro">
+
+    <!-- CSS URL Rewriting fails when using webjar resource locator:
+         https://github.com/alexo/wro4j/issues/127 
+         
+         
+         
+         Non lo utilizzo !!! -->
+<group name="main">
+    
+    	<!-- nuova grafica -->
+    	<css>/css/bootstrap.min.css</css>
+		<css>/css/animate.css</css>
+		<css>/css/owl.css</css>
+		<css>/css/style.css</css>
+		<css>/font-awesome/css/font-awesome.min.css</css>
+		<css>http://fonts.googleapis.com/css?family=Montserrat:400,700</css>
+		<css>http://fonts.googleapis.com/css?family=Varela+Round:400,700</css>
+
+
+
+		
+		
+		
+		
+		
+		<js>/js/jquery-2.1.0.min.js</js>
+		<!-- js>/scripts/vendor/jquery-ui-1.11.4/external/jquery/jquery.js</js  --> 
+		<!-- js>/scripts/vendor/jquery-ui-1.11.4/jquery-ui.min.js</js  -->
+		<js>/js/jquery.easing.js</js>
+		<js>/js/smoothScroll.js</js>
+		<js>/js/bootstrap.min.js</js>
+		<js>/js/images-loaded.js</js>
+		<js>/js/jquery.localscroll-1.2.7-min.js</js>
+		<js>/js/jquery.count.js</js>
+		<js>/js/jquery.prettyPhoto.js</js>
+		<js>/js/jquery.parallax-1.1.3.js</js>
+		<js>/js/owl.carousel.js</js>
+		<js>/js/wow.js</js>
+		<js>/js/waypoints.min.js</js>
+		<js>/js/main.js</js>
+
+
+		<!-- precedente -->
+        <js>classpath:META-INF/resources/webjars/jquery-cookie/1.3.1/jquery.cookie.js</js>
+        <js>/scripts/script.js</js>
+        
+    	<js>/scripts/plugins.js</js>
+		<!-- plugins.js -->
+		<!-- This file can be used to contain all your plugins, such as jQuery plugins and other 3rd party scripts.
+		One approach is to put jQuery plugins inside of a (function($){ ... })(jQuery); 
+		closure to make sure they're in the jQuery namespace safety blanket. 
+		Read more about jQuery plugin authoring.
+		By default the plugins.js file contains a small script to avoid console errors in browsers that lack a console. 
+		The script will make sure that, if a console method isn't available, that method will have the value of empty function, thus, 
+		preventing the browser from throwing an error. -->
+</group>
+    
+</groups>

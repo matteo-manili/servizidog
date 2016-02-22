@@ -1,0 +1,17 @@
+
+#macro( displayStackedMenuOrizontal $menu )
+  #if ($displayer.isAllowed($menu))
+ 
+      <h3> -
+      #foreach ($menuItem in $menu.components)
+        #if ($displayer.isAllowed($menuItem))
+          #set ($title = $displayer.getMessage($menuItem.title))
+          #if ($request.getRequestURI().contains($menuItem.url))class="active"#end <a href="$menuItem.url" title="$title" #if($menuItem.target)target="$menuItem.target"#end>${title}</a> -
+        #end
+      #end
+      </h3>
+      
+  #end
+#end
+
+#displayStackedMenuOrizontal($menu)

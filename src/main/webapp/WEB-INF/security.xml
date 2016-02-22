@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xmlns:beans="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p"
+             xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+              http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd">
+
+    <http pattern="/images/**" security="none"/>
+    <http pattern="/styles/**" security="none"/>
+    <http pattern="/scripts/**" security="none"/>
+    <http pattern="/assets/**" security="none"/>
+    <http pattern="/activmap/**" security="none"/>
+    
+    <!-- nuova grafica  -->
+    <http pattern="/css/**" security="none"/>
+    <http pattern="/font-awesome/**" security="none"/>
+    <http pattern="/fonts/**" security="none"/>
+    <http pattern="/img/**" security="none"/>
+    <http pattern="/js/**" security="none"/>
+    
+    
+    
+    <http auto-config="true">
+    
+    	
+    
+    	<!-- DOMINIO PUBBLICO -->
+    	<intercept-url pattern="/app/home" access="ROLE_ANONYMOUS,ROLE_ADMIN,ROLE_USER"/>
+    	
+    	<!-- schede profili user -->
+    	<intercept-url pattern="/app/dogsitter/**" access="ROLE_ANONYMOUS,ROLE_ADMIN,ROLE_USER"/>
+    	<intercept-url pattern="/app/doghost/**" access="ROLE_ANONYMOUS,ROLE_ADMIN,ROLE_USER"/>
+    	<intercept-url pattern="/app/adozione/**" access="ROLE_ANONYMOUS,ROLE_ADMIN,ROLE_USER"/>
+    	<intercept-url pattern="/app/associazione/**" access="ROLE_ANONYMOUS,ROLE_ADMIN,ROLE_USER"/>
+    	<intercept-url pattern="/app/dogsitter-annunci/**" access="ROLE_ANONYMOUS,ROLE_ADMIN,ROLE_USER"/>
+    	<intercept-url pattern="/app/adozione-annunci/**" access="ROLE_ANONYMOUS,ROLE_ADMIN,ROLE_USER"/>
+    	<!-- liste user -->
+    	<intercept-url pattern="/app/dogsitter*" access="ROLE_ANONYMOUS,ROLE_ADMIN,ROLE_USER"/>
+    	<intercept-url pattern="/app/doghost*" access="ROLE_ANONYMOUS,ROLE_ADMIN,ROLE_USER"/>
+    	<intercept-url pattern="/app/adozione*" access="ROLE_ANONYMOUS,ROLE_ADMIN,ROLE_USER"/>
+    	<intercept-url pattern="/app/associazione*" access="ROLE_ANONYMOUS,ROLE_ADMIN,ROLE_USER"/>
+    	
+    	<!-- pagine web -->
+    	<intercept-url pattern="/app/ricerca" access="ROLE_ANONYMOUS,ROLE_ADMIN,ROLE_USER"/>
+		<intercept-url pattern="/app/mappa" access="ROLE_ANONYMOUS,ROLE_ADMIN,ROLE_USER"/>
+		<intercept-url pattern="/app/contatti" access="ROLE_ANONYMOUS,ROLE_ADMIN,ROLE_USER"/>
+		
+		<!-- conferma email registrazione utente -->
+    	<intercept-url pattern="/app/confirmAccount" access="ROLE_ANONYMOUS,ROLE_ADMIN,ROLE_USER"/>
+    	<intercept-url pattern="/app/registrazione" access="ROLE_ANONYMOUS,ROLE_ADMIN,ROLE_USER"/>
+    	<intercept-url pattern="/app/signup*" access="ROLE_ANONYMOUS,ROLE_ADMIN,ROLE_USER"/> <!-- NON LA USO PIU' A PARTE I TEST -->
+    	
+		<!-- recupero username password, richiesta aggiornamento password -->
+		<intercept-url pattern="/app/passwordHint*" access="ROLE_ANONYMOUS,ROLE_ADMIN,ROLE_USER"/>
+        <intercept-url pattern="/app/requestRecoveryToken*" access="ROLE_ANONYMOUS,ROLE_ADMIN,ROLE_USER" />
+        <intercept-url pattern="/app/requestRecoveryTokenUsernameAndPassword*" access="ROLE_ANONYMOUS,ROLE_ADMIN,ROLE_USER" />
+        <intercept-url pattern="/app/updatePassword*" access="ROLE_ANONYMOUS,ROLE_ADMIN,ROLE_USER" />
+        
+        <!-- facebook login -->
+        <intercept-url pattern="/app/facebookReturn*" access="ROLE_ANONYMOUS,ROLE_ADMIN,ROLE_USER"/>
+        
+		<!-- pagine di test -->
+    	<intercept-url pattern="/app/canismarriti*" access="ROLE_ANONYMOUS,ROLE_ADMIN,ROLE_USER"/>
+    	
+    	<!-- verifica google googlee29bdebc24b34eb4.html -->
+    	<intercept-url pattern="/app/googlee29bdebc24b34eb4.html" access="ROLE_ANONYMOUS,ROLE_ADMIN,ROLE_USER"/>
+    	
+    	
+    	
+    		<!-- CHIAMATE AJAX -->
+	    	<intercept-url pattern="/app/ajaxtest*" access="ROLE_ANONYMOUS,ROLE_ADMIN,ROLE_USER"/>
+	    	<intercept-url pattern="/app/getTags*" access="ROLE_ANONYMOUS,ROLE_ADMIN,ROLE_USER"/>
+	    	<intercept-url pattern="/app/getComune*" access="ROLE_ANONYMOUS,ROLE_ADMIN,ROLE_USER"/>
+	    	<intercept-url pattern="/app/getActiveMap*" access="ROLE_ANONYMOUS,ROLE_ADMIN,ROLE_USER"/>
+	    	<!-- (upload image) -->
+	    	<intercept-url pattern="/app/upload*" access="ROLE_ADMIN,ROLE_USER"/>
+	    	<intercept-url pattern="/app/impostaImmaginePreferitaButton*" access="ROLE_ADMIN,ROLE_USER"/>
+	    	<intercept-url pattern="/app/picture/**" access="ROLE_ANONYMOUS,ROLE_ADMIN,ROLE_USER"/>
+	    	<intercept-url pattern="/app/thumbnail/**" access="ROLE_ANONYMOUS,ROLE_ADMIN,ROLE_USER"/>
+	    	<intercept-url pattern="/app/delete/**" access="ROLE_ADMIN,ROLE_USER"/>
+	    	<!-- (immagini annunci) -->
+	    	<intercept-url pattern="/app/thumbnailAnnuncioDogSitter/**" access="ROLE_ANONYMOUS,ROLE_ADMIN,ROLE_USER"/>
+	    	<intercept-url pattern="/app/immagineGrandeAnnuncioDogSitter/**" access="ROLE_ANONYMOUS,ROLE_ADMIN,ROLE_USER"/>
+	    	
+	    	<intercept-url pattern="/app/thumbnailAnnuncioAdozione/**" access="ROLE_ANONYMOUS,ROLE_ADMIN,ROLE_USER"/>
+	    	<intercept-url pattern="/app/immagineGrandeAnnuncioAdozione/**" access="ROLE_ANONYMOUS,ROLE_ADMIN,ROLE_USER"/>
+    		<!-- (Dog Sitter) -->
+    		<intercept-url pattern="/app/impostaDateRangeDisponibilitaDogSitter*" access="ROLE_ADMIN,ROLE_USER"/>
+    		<intercept-url pattern="/app/impostaTariffaDogSitter*" access="ROLE_ADMIN,ROLE_USER"/>
+    		<!-- (DogS Host) -->
+    		<intercept-url pattern="/app/impostaDateRangeDisponibilitaDogHost*" access="ROLE_ADMIN,ROLE_USER"/>
+			<intercept-url pattern="/app/impostaTariffaDogHost*" access="ROLE_ADMIN,ROLE_USER"/>
+			<intercept-url pattern="/app/impostaInfoCasaDogHost*" access="ROLE_ADMIN,ROLE_USER"/>
+			<!-- (Adozione)  -->
+			<intercept-url pattern="/app/eliminaCaneAdozione*" access="ROLE_ADMIN,ROLE_USER"/>
+			<!-- (Associazione)  -->
+			<intercept-url pattern="/app/eliminaCaneAssociazione*" access="ROLE_ADMIN,ROLE_USER"/>
+
+    	<!-- Testare se necessitano o meno questi permessi DWR -->
+    	<intercept-url pattern="/app/dwr**" access="ROLE_ANONYMOUS,ROLE_ADMIN,ROLE_USER"/>
+		<intercept-url pattern="/app/dwr/**/*.*" access="ROLE_ANONYMOUS,ROLE_ADMIN,ROLE_USER"/>
+		<intercept-url pattern="/app/dwr/**/*" access="ROLE_ANONYMOUS,ROLE_ADMIN,ROLE_USER"/>
+		<intercept-url pattern="/app/dwr" access="ROLE_ANONYMOUS,ROLE_ADMIN,ROLE_USER"/>
+		
+
+		<!-- DOMINIO INTERNO -->
+		<intercept-url pattern="/app/home-utente*" access="ROLE_ADMIN,ROLE_USER"/>
+    	<intercept-url pattern="/app/**" access="ROLE_ADMIN,ROLE_USER"/>
+    	<intercept-url pattern="/app/admin/**" access="ROLE_ADMIN"/>
+    	<intercept-url pattern="/app/dogsitterform*" access="ROLE_ADMIN,ROLE_USER"/>
+    	<intercept-url pattern="/app/doghostform*" access="ROLE_ADMIN,ROLE_USER"/>
+    	<intercept-url pattern="/app/adozioneform*" access="ROLE_ADMIN,ROLE_USER"/>
+    	<intercept-url pattern="/app/adozioneCaneform*" access="ROLE_ADMIN,ROLE_USER"/>
+    	<intercept-url pattern="/app/associazioneform*" access="ROLE_ADMIN,ROLE_USER"/>
+    	<intercept-url pattern="/app/associazioneCaneform*" access="ROLE_ADMIN,ROLE_USER"/>
+		
+		
+        <form-login default-target-url="/home-utente" login-page="/login" authentication-failure-url="/login?error=true" login-processing-url="/j_security_check"/>
+        <remember-me user-service-ref="userDao" key="e37f4b31-0c45-11dd-bd0b-0800200c9a66"/>
+    </http>
+
+    <authentication-manager>
+        <authentication-provider user-service-ref="userDao">
+            <password-encoder ref="passwordEncoder"/>
+        </authentication-provider>
+    </authentication-manager>
+
+
+    <!-- Override the default password-encoder (BCrypt) by uncommenting the following and changing the class -->
+    <!-- <bean id="passwordEncoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder"/> -->
+
+    <global-method-security>
+        <protect-pointcut expression="execution(* *..service.UserManager.getUsers(..))" access="ROLE_ADMIN"/>
+        <protect-pointcut expression="execution(* *..service.UserManager.removeUser(..))" access="ROLE_ADMIN"/>
+    </global-method-security>
+</beans:beans>

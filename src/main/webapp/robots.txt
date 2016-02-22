@@ -1,0 +1,7 @@
+# www.robotstxt.org/
+
+User-agent: Adsbot-Google
+User-agent: *
+Disallow:
+Allow: /
+Sitemap: http://servizidog.it/sitemap.xml

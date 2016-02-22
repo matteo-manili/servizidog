@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MenuConfig>
+    <Displayers>
+        <Displayer name="Velocity" type="net.sf.navigator.displayer.VelocityMenuDisplayer"/>
+    </Displayers>
+    
+    <Menus>
+        <Menu name="Home" title="home.title" page="/home-utente" roles="ROLE_ADMIN,ROLE_USER"/>
+        
+        <Menu name="Login" title="menu.login" page="/login"/>
+        
+        <Menu name="UserMenu" title="menu.user" description="User Menu" page="/userform" roles="ROLE_ADMIN,ROLE_USER"/>
+        
+        <Menu name="AdminMenu" title="menu.admin" description="Admin Menu" roles="ROLE_ADMIN" page="/admin/users">
+            <Item name="ViewUsers" title="menu.admin.users" page="/admin/users"/>
+            <Item name="ActiveUsers" title="home.activeUsers" page="/admin/activeUsers"/>
+            <Item name="ReloadContext" title="menu.admin.reload" page="/admin/reload"/>
+            <Item name="FileUpload" title="menu.selectFile" page="/fileupload"/>
+        </Menu>
+        
+        <Menu name="Logout" title="user.logout" page="/logout" roles="ROLE_ADMIN,ROLE_USER"/>
+        
+        <Menu name="Registrazione" title="menu.registrati" page="/registrazione"/>
+            
+        <Menu name="Languages" title="menu.language" description="languages" page="/index">
+            <Item name="italian" title="index.italiano" page="/?locale=it"/>
+            <Item name="english" title="index.english" page="/?locale=en"/>
+            <Item name="espanyol" title="index.espanyol" page="/?locale=es"/>
+        </Menu>
+        
+        <Menu name="MenuServizi" title="menu.servizi" description="Menu Servizi" page="/index">
+			<Item name="DogSitter" title="menu.dogsitter" page="/dogsitter"/>
+			<Item name="DogHost" title="menu.doghost" page="/doghost"/>
+			<Item name="TaxiDog" title="menu.taxidog" page="/taxidog"/>
+			<Item name="CaniSmarriti" title="menu.canismarriti" page="/canismarriti"/>
+			<Item name="Veterinari" title="menu.veterinari" page="/login"/>
+			<Item name="Associazioni" title="menu.associazioni" page="/login"/>
+			<Item name="Canili" title="menu.canili" page="/login"/>
+			<Item name="Educatori" title="menu.educatori" page="/login"/>
+			<Item name="negozi" title="menu.negozi" page="/login"/>
+        </Menu>
+        
+        <Menu name="Mappa" title="menu.mappa" page="/mappa"/>
+        <Menu name="Ricerca" title="menu.ricerca" page="/ricerca"/>
+        
+		<!--Menu name="Ricerche" title="menu.ricerca">
+        	<Item name="Mappa" title="menu.ricerca" page="/ricerca"/>
+            <Item name="Mappa" title="menu.mappa" page="/mappa"/>
+        </Menu-->
+         
+        
+        
+        
+        
+        
+        
+        <Menu name="Contatti" title="contatti.contatti" page="/contatti"/>
+        
+        
+    </Menus>
+</MenuConfig>

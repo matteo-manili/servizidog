@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xmlns:dwr="http://www.directwebremoting.org/schema/spring-dwr"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+            http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd     
+            http://www.directwebremoting.org/schema/spring-dwr http://www.directwebremoting.org/schema/spring-dwr-3.0.xsd">
+       
+ 
+    <dwr:controller id="dwrController" debug="true" />
+    
+    <bean id="urlMapping" 
+             class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+        <property name="mappings">
+            <props>
+                <!-- DWR configuration -->
+                <prop key="/dwr/**/*.*">dwrController</prop>
+                <prop key="/dwr/**/*">dwrController</prop>
+                <prop key="/dwr">dwrController</prop>
+                <prop key="*.html">dwrController</prop>
+            </props>
+        </property>
+        <property name="alwaysUseFullPath" value="true"/>
+    </bean>
+    
+    
+	<dwr:configuration>
+	    <dwr:convert type="bean" class="com.dogsitter.model.Person" />
+	    <dwr:convert type="bean" class="java.util.List" />
+	    <dwr:convert type="exception" class="java.lang.Exception" />
+	    <dwr:convert type="bean" class="java.lang.StackTraceElement" />
+	</dwr:configuration>
+	
+	<!-- prove di Person -->
+	<bean id="PersonManagerImpl" class="com.dogsitter.service.dwr.impl.PersonManagerImplDWR"> 
+		<dwr:remote javascript="PersonManagerImpl"> 
+			<dwr:convert type="bean" class="com.dogsitter.model.Person" />
+			<dwr:convert type="bean" class="java.util.List" />
+	  	</dwr:remote>
+	  	
+	</bean> 
+	
+	
+	<!-- controllo user dog sitter 
+    <bean id="DwrControllerDogsitterTitolo" class="com.dogsitter.webapp.controller.DwrController"> 
+		<dwr:remote javascript="DwrControllerDogsitterTitolo">
+	  	</dwr:remote>
+	</bean -->  
+	
+	<!-- Servlet x sessionn 
+	<bean id="DwrControllerSession" class="com.dogsitter.webapp.controller.DwrController"> 
+		<dwr:remote javascript="DwrControllerSession"> 
+	  	</dwr:remote>
+	  	
+	</bean --> 
+
+	
+	
+
+    
+</beans>

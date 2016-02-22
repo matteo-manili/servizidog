@@ -1,0 +1,5 @@
+Ciao ${userFirstName},
+ 
+Per attivare il tuo account, fai click sul seguente link o copialo sulla barra degli indirizzi del tuo browser.
+ 
+${signupConfirmURL}

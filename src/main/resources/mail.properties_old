@@ -1,0 +1,66 @@
+# This properties file is used to configure mail settings in 
+# /WEB-INF/applicationContext-service.xml.
+
+
+mail.default.from=ServiziDog <info@servizidog.it>
+# mail.debug=true
+# mail.transport.protocol=smtp
+# mail.transport.protocol=smtp
+# mail.host=smtp.gmail.com
+# mail.port=465
+mail.username=matteo.manili@gmail.com
+mail.password=Giulietta1945
+
+
+# mail.smtp.starttls.enable=true
+
+# mail.mime.address.strict=false
+# mail.mime.charset=UTF-8
+
+
+
+# ------------------------------------------------------------
+
+mail.transport.protocol=smtp
+mail.debug=true
+mail.smtp.auth=true
+
+mail.port=465
+mail.mime.address.strict=false 
+
+
+
+mail.smtp.starttls.enable=true
+mail.smtp.starttls.required=true
+mail.smtp.EnableSSL.enable=true
+
+
+
+mail.smtp.host=smtp.gmail.com
+mail.smtp.port=25
+mail.debug=true
+mail.smtp.auth=true
+mail.smtp.starttls.enable=true
+mail.smtp.EnableSSL.enable=true
+
+mail.smtp.socketFactory.class=javax.net.ssl.SSLSocketFactory
+mail.smtp.socketFactory.fallback=false
+mail.smtp.port=465
+mail.smtp.socketFactory.port=465
+
+
+
+mail.smtp.socketFactory.class=javax.net.ssl.SSLSocketFactory
+mail.smtp.socketFactory.fallback=false
+mail.smtp.port=465
+mail.smtp.socketFactory.port=465
+
+
+# valori di default
+# mail.default.from=DogSitter <DogSitter@raibledesigns.com>
+# mail.debug=false
+# mail.transport.protocol=smtp
+# mail.host=localhost
+# mail.port=25
+# mail.username=
+# mail.password=

@@ -1,0 +1,30 @@
+
+#macro( displayStackedMenuVertical $menu )
+  #if ($displayer.isAllowed($menu))
+      ## set menu title
+      #set ($title = $displayer.getMessage($menu.title)) <img src="images/favicon.ico">
+
+      <ul class="nav nav-pills nav-stacked">
+          #if (!$menu.parent) <li class="nav-header">$title</li>#end
+      #foreach ($menuItem in $menu.getComponents())
+        #if ($displayer.isAllowed($menuItem))
+          #set ($title = $displayer.getMessage($menuItem.title))
+          <li #if($request.getRequestURI().contains($menuItem.getPage()))class="active"#end><a href="$menuItem.url" title="$title" #if($menuItem.target)target="$menuItem.target"#end>${title}</a></li>
+        		##aa=$request.getRequestURI()
+        		##bb=$menuItem.url
+				##cc=$menuItem.getModule() 
+        		##dd=$menuItem.getName() 		
+        		##ee=$menuItem.getPage() 
+        		##ff=$menuItem.getTitle() 
+        		## vekkia IF ($request.getRequestURI().contains($menuItem.url))
+        		
+        		
+        #end
+      #end
+      </ul>
+  #end
+#end
+
+
+
+#displayStackedMenuVertical($menu)

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" version="1.0">
+  
+  <!-- COSTRUISCE LE TABALLE NEL DATABASE (l'applicazione potrebbe non utilizzarla) -->
+    <persistence-unit name="ApplicationEntityManager" transaction-type="RESOURCE_LOCAL">
+    	<provider>org.hibernate.ejb.HibernatePersistence</provider>
+        <class>com.dogsitter.model.User</class>
+        <class>com.dogsitter.model.Role</class>
+        
+        <class>com.dogsitter.model.Person</class> 
+        
+        <class>com.dogsitter.model.Regioni</class>
+        <class>com.dogsitter.model.Province</class>
+        <class>com.dogsitter.model.Comuni</class> 
+        
+        <class>com.dogsitter.model.TipoRuoliServiceDog</class> 
+        
+        <class>com.dogsitter.model.DogSitter</class> 
+        <class>com.dogsitter.model.DogHost</class>
+        <class>com.dogsitter.model.Adozione</class>
+        <class>com.dogsitter.model.Cane</class>
+        <class>com.dogsitter.model.Associazione</class> 
+        <class>com.dogsitter.model.Gatto</class>
+        <class>com.dogsitter.model.Image</class> 
+        <class>com.dogsitter.model.AnnunciKijijiDogSitter</class>
+        <class>com.dogsitter.model.AnnunciCercaPadroneAdozione</class>
+        
+        <class>com.dogsitter.model.Immagini_store</class>
+        <class>com.dogsitter.model.GestioneApplicazione</class>
+    </persistence-unit>
+     
+    <!-- WARNING: This file's file original source is at web/common/src/main/resources/META-INF. The
+        META-INF directory is included in the jsf, spring, struts and tapestry projects using svn:externals.
+        If you need to modify this file, please do so in web/common/src/main/resources/META-INF, check it
+        in, and then "svn up" for the other modules. -->
+</persistence>
