@@ -96,11 +96,11 @@
 			<version>1.0.1</version>
 		</dependency>
 		
-		<!-- org.json -->
+		<!-- https://mvnrepository.com/artifact/org.json/json -->
 		<dependency>
-			<groupId>org.json</groupId>
-			<artifactId>json</artifactId>
-			<version>20151123</version>
+		    <groupId>org.json</groupId>
+		    <artifactId>json</artifactId>
+		    <version>20230618</version>
 		</dependency>
 		
 		<!-- retrive coordinate da google maps -->
